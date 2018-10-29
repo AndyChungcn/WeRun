@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5C97EFF821867B5200109145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97EFF721867B5200109145 /* AppDelegate.swift */; };
-		5C97EFFA21867B5200109145 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97EFF921867B5200109145 /* FirstViewController.swift */; };
-		5C97EFFC21867B5200109145 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97EFFB21867B5200109145 /* SecondViewController.swift */; };
 		5C97EFFF21867B5200109145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C97EFFD21867B5200109145 /* Main.storyboard */; };
 		5C97F00121867B5400109145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C97F00021867B5400109145 /* Assets.xcassets */; };
 		5C97F00421867B5400109145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C97F00221867B5400109145 /* LaunchScreen.storyboard */; };
+		5C97F01D21868CE300109145 /* BeginRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97F01C21868CE300109145 /* BeginRunVC.swift */; };
+		5C97F01F21868CF600109145 /* RunLogTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97F01E21868CF600109145 /* RunLogTVC.swift */; };
+		5C97F02121868D0A00109145 /* CurrentRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97F02021868D0A00109145 /* CurrentRunVC.swift */; };
+		5C97F02521868D2A00109145 /* RunLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97F02421868D2A00109145 /* RunLocation.swift */; };
+		5C97F02721869B7A00109145 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97F02621869B7A00109145 /* Extensions.swift */; };
 		F070354E80030C228FD1F6B7 /* Pods_WeRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5732844B24F9DA3EAB224089 /* Pods_WeRun.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +23,15 @@
 		5732844B24F9DA3EAB224089 /* Pods_WeRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C97EFF421867B5200109145 /* WeRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C97EFF721867B5200109145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C97EFF921867B5200109145 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5C97EFFB21867B5200109145 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5C97EFFE21867B5200109145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C97F00021867B5400109145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C97F00321867B5400109145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C97F00521867B5400109145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C97F01C21868CE300109145 /* BeginRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginRunVC.swift; sourceTree = "<group>"; };
+		5C97F01E21868CF600109145 /* RunLogTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLogTVC.swift; sourceTree = "<group>"; };
+		5C97F02021868D0A00109145 /* CurrentRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRunVC.swift; sourceTree = "<group>"; };
+		5C97F02421868D2A00109145 /* RunLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLocation.swift; sourceTree = "<group>"; };
+		5C97F02621869B7A00109145 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		76D9E876ACA58F5E8467B366 /* Pods-WeRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeRun/Pods-WeRun.release.xcconfig"; sourceTree = "<group>"; };
 		AB2C10D88552CD7DE26E96E5 /* Pods-WeRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeRun/Pods-WeRun.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,15 +86,71 @@
 		5C97EFF621867B5200109145 /* WeRun */ = {
 			isa = PBXGroup;
 			children = (
+				5C97F01B21868C7400109145 /* Resources */,
+				5C97F01A21868C6E00109145 /* Extensions */,
+				5C97F01921868C6400109145 /* Utilities */,
+				5C97F01821868C5700109145 /* Controller */,
+				5C97F01721868C3C00109145 /* View */,
+				5C97F01621868C2F00109145 /* Model */,
 				5C97EFF721867B5200109145 /* AppDelegate.swift */,
-				5C97EFF921867B5200109145 /* FirstViewController.swift */,
-				5C97EFFB21867B5200109145 /* SecondViewController.swift */,
 				5C97EFFD21867B5200109145 /* Main.storyboard */,
 				5C97F00021867B5400109145 /* Assets.xcassets */,
 				5C97F00221867B5400109145 /* LaunchScreen.storyboard */,
 				5C97F00521867B5400109145 /* Info.plist */,
 			);
 			path = WeRun;
+			sourceTree = "<group>";
+		};
+		5C97F01621868C2F00109145 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		5C97F01721868C3C00109145 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		5C97F01821868C5700109145 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C97F01C21868CE300109145 /* BeginRunVC.swift */,
+				5C97F01E21868CF600109145 /* RunLogTVC.swift */,
+				5C97F02021868D0A00109145 /* CurrentRunVC.swift */,
+				5C97F02421868D2A00109145 /* RunLocation.swift */,
+			);
+			name = Controller;
+			path = "New Group3";
+			sourceTree = "<group>";
+		};
+		5C97F01921868C6400109145 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			path = "New Group4";
+			sourceTree = "<group>";
+		};
+		5C97F01A21868C6E00109145 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C97F02621869B7A00109145 /* Extensions.swift */,
+			);
+			name = Extensions;
+			path = "New Group5";
+			sourceTree = "<group>";
+		};
+		5C97F01B21868C7400109145 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C97EFFC21867B5200109145 /* SecondViewController.swift in Sources */,
+				5C97F02521868D2A00109145 /* RunLocation.swift in Sources */,
+				5C97F02721869B7A00109145 /* Extensions.swift in Sources */,
+				5C97F01D21868CE300109145 /* BeginRunVC.swift in Sources */,
 				5C97EFF821867B5200109145 /* AppDelegate.swift in Sources */,
-				5C97EFFA21867B5200109145 /* FirstViewController.swift in Sources */,
+				5C97F02121868D0A00109145 /* CurrentRunVC.swift in Sources */,
+				5C97F01F21868CF600109145 /* RunLogTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

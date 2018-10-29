@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Begin RunVC-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="WeRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="BeginRunVC" customModule="WeRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-VA-Je7">
                                 <rect key="frame" x="152" y="489" width="71" height="71"/>
                                 <state key="normal" image="startRunningButton"/>
+                                <connections>
+                                    <segue destination="7uy-UD-qDV" kind="show" id="Bgo-Sb-jMY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始跑步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-bq-RmS">
                                 <rect key="frame" x="143.5" y="565" width="88" height="31"/>
@@ -84,15 +87,18 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabbar-runIcon" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapView" destination="PGS-Pv-8AY" id="OXr-RM-Inf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Current RunVC-->
         <scene sceneID="cmn-Yv-Rl4">
             <objects>
-                <viewController id="7uy-UD-qDV" sceneMemberID="viewController">
+                <viewController id="7uy-UD-qDV" customClass="CurrentRunVC" customModule="WeRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s23-Q2-4Es">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,17 +155,17 @@
                                     <constraint firstAttribute="width" constant="375" id="L6k-Fi-Z7z"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-SS-sJZ">
-                                <rect key="frame" x="131" y="378" width="113" height="76.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-SS-sJZ">
+                                <rect key="frame" x="131" y="378" width="113" height="77"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVH-6n-sK1">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="38"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVH-6n-sK1">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="38.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="28"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbV-gc-LZq">
-                                        <rect key="frame" x="15.5" y="38" width="82" height="38.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbV-gc-LZq">
+                                        <rect key="frame" x="15.5" y="38.5" width="82" height="38.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-jH-TAD">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="38.5"/>
@@ -177,25 +183,28 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endRunOutline" translatesAutoresizingMaskIntoConstraints="NO" id="73q-HK-cBz">
-                                <rect key="frame" x="47" y="542" width="232" height="75"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="endRunOutline" translatesAutoresizingMaskIntoConstraints="NO" id="73q-HK-cBz">
+                                <rect key="frame" x="47" y="542.5" width="232" height="74.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxY-FZ-JpS">
-                                <rect key="frame" x="253.5" y="542" width="75" height="75"/>
+                                <rect key="frame" x="255.5" y="542" width="75" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="Fi7-rD-BRp"/>
-                                    <constraint firstAttribute="width" secondItem="gxY-FZ-JpS" secondAttribute="height" multiplier="1:1" id="TpG-B7-rGj"/>
+                                    <constraint firstAttribute="width" constant="75" id="dSa-Pl-bKX"/>
+                                    <constraint firstAttribute="height" constant="75" id="eX9-GJ-Eb9"/>
                                 </constraints>
                                 <state key="normal" image="pauseButton"/>
+                                <connections>
+                                    <action selector="pauseBtnPressed:" destination="7uy-UD-qDV" eventType="touchUpInside" id="xY7-Zc-wYN"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endRunButton" translatesAutoresizingMaskIntoConstraints="NO" id="5su-vf-QXM">
-                                <rect key="frame" x="57" y="551" width="57" height="57"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="endRunButton" translatesAutoresizingMaskIntoConstraints="NO" id="5su-vf-QXM">
+                                <rect key="frame" x="57" y="551.5" width="57" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="0gk-9v-DUh"/>
                                     <constraint firstAttribute="width" secondItem="5su-vf-QXM" secondAttribute="height" multiplier="1:1" id="NLr-4p-BvY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WL-5e-5Yt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WL-5e-5Yt">
                                 <rect key="frame" x="146" y="564.5" width="83.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,23 +217,23 @@
                             <constraint firstItem="hU2-l5-Y0p" firstAttribute="trailing" secondItem="mUP-si-Ott" secondAttribute="trailing" id="6m2-44-wiA"/>
                             <constraint firstItem="G15-xs-ic1" firstAttribute="top" secondItem="mUP-si-Ott" secondAttribute="top" constant="8" id="7Iw-ZN-k8M"/>
                             <constraint firstItem="2TB-SS-sJZ" firstAttribute="top" secondItem="hU2-l5-Y0p" secondAttribute="bottom" constant="36" id="7WN-xv-Vpy"/>
+                            <constraint firstItem="gxY-FZ-JpS" firstAttribute="centerY" secondItem="73q-HK-cBz" secondAttribute="centerY" id="9Du-kx-BSW"/>
                             <constraint firstItem="5su-vf-QXM" firstAttribute="leading" secondItem="mUP-si-Ott" secondAttribute="leading" constant="57" id="DL6-tf-cie"/>
                             <constraint firstItem="4WL-5e-5Yt" firstAttribute="centerX" secondItem="s23-Q2-4Es" secondAttribute="centerX" id="Djk-U5-1n0"/>
+                            <constraint firstItem="mUP-si-Ott" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gxY-FZ-JpS" secondAttribute="trailing" constant="16" id="Ec6-Or-DiN"/>
                             <constraint firstItem="okl-7L-vR2" firstAttribute="leading" secondItem="mUP-si-Ott" secondAttribute="leading" id="Hrd-6n-Dt4"/>
                             <constraint firstItem="73q-HK-cBz" firstAttribute="leading" secondItem="mUP-si-Ott" secondAttribute="leading" constant="47" id="Jbf-bl-M1v"/>
                             <constraint firstItem="Fid-LH-zS1" firstAttribute="centerY" secondItem="hU2-l5-Y0p" secondAttribute="centerY" id="LYf-27-MKE"/>
                             <constraint firstItem="73q-HK-cBz" firstAttribute="top" secondItem="2TB-SS-sJZ" secondAttribute="bottom" constant="87.5" id="OkK-dJ-ZK8"/>
                             <constraint firstItem="okl-7L-vR2" firstAttribute="top" secondItem="s23-Q2-4Es" secondAttribute="top" id="PmB-a0-KSy"/>
+                            <constraint firstItem="gxY-FZ-JpS" firstAttribute="leading" secondItem="4WL-5e-5Yt" secondAttribute="trailing" constant="26" id="Txd-qw-TjW"/>
                             <constraint firstItem="wK1-cf-m98" firstAttribute="top" secondItem="G15-xs-ic1" secondAttribute="bottom" constant="26" id="TzI-M5-vub"/>
                             <constraint firstItem="2TB-SS-sJZ" firstAttribute="centerX" secondItem="s23-Q2-4Es" secondAttribute="centerX" id="UOr-2P-0FK"/>
-                            <constraint firstItem="73q-HK-cBz" firstAttribute="bottom" secondItem="gxY-FZ-JpS" secondAttribute="bottom" id="Ugu-1R-ckU"/>
                             <constraint firstAttribute="bottom" secondItem="okl-7L-vR2" secondAttribute="bottom" id="k26-j0-RUe"/>
                             <constraint firstItem="okl-7L-vR2" firstAttribute="trailing" secondItem="mUP-si-Ott" secondAttribute="trailing" id="kMy-FW-rsp"/>
                             <constraint firstItem="4WL-5e-5Yt" firstAttribute="centerY" secondItem="73q-HK-cBz" secondAttribute="centerY" id="kXz-Vu-gHg"/>
                             <constraint firstItem="wK1-cf-m98" firstAttribute="centerX" secondItem="s23-Q2-4Es" secondAttribute="centerX" id="lA9-Hm-qTN"/>
-                            <constraint firstItem="73q-HK-cBz" firstAttribute="top" secondItem="gxY-FZ-JpS" secondAttribute="top" id="moJ-Ve-A8n"/>
                             <constraint firstItem="hU2-l5-Y0p" firstAttribute="leading" secondItem="mUP-si-Ott" secondAttribute="leading" id="oaC-qB-nIU"/>
-                            <constraint firstItem="gxY-FZ-JpS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4WL-5e-5Yt" secondAttribute="trailing" constant="-10" id="pWd-La-XvL"/>
                             <constraint firstItem="5su-vf-QXM" firstAttribute="centerY" secondItem="73q-HK-cBz" secondAttribute="centerY" id="pXN-eE-bVC"/>
                             <constraint firstItem="hU2-l5-Y0p" firstAttribute="top" secondItem="wK1-cf-m98" secondAttribute="bottom" constant="36" id="rvY-74-e8g"/>
                             <constraint firstItem="mUP-si-Ott" firstAttribute="bottom" secondItem="73q-HK-cBz" secondAttribute="bottom" constant="50" id="s7Z-lr-7KV"/>
@@ -233,15 +242,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mUP-si-Ott"/>
                     </view>
+                    <connections>
+                        <outlet property="avgPaceLabel" destination="1FX-3I-RP7" id="e3B-HW-dvU"/>
+                        <outlet property="distanceLabel" destination="pcU-jH-TAD" id="CqJ-7D-LUB"/>
+                        <outlet property="durationLabel" destination="wK1-cf-m98" id="wz7-RW-fHH"/>
+                        <outlet property="pauseBtn" destination="gxY-FZ-JpS" id="kmP-8i-CgD"/>
+                        <outlet property="sliderImageView" destination="5su-vf-QXM" id="vUa-oe-hgl"/>
+                        <outlet property="swipeBGImageView" destination="73q-HK-cBz" id="7y7-Fx-M7v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYd-Ha-0sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437.5999999999999" y="-323.38830584707648"/>
         </scene>
-        <!--Second-->
+        <!--Run LogTVC-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="WeRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="RunLogTVC" customModule="WeRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +289,7 @@
                                 <rect key="frame" x="0.0" y="87" width="375" height="531"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="ZXW-cc-FTm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogCell" rowHeight="80" id="ZXW-cc-FTm">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZXW-cc-FTm" id="gIT-Hx-gtM">
@@ -365,7 +382,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbar-myLogIcon" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -396,8 +413,8 @@
         <image name="endRunButton" width="57" height="57"/>
         <image name="endRunOutline" width="232" height="75"/>
         <image name="pauseButton" width="75" height="75"/>
-        <image name="second" width="30" height="30"/>
         <image name="startRunningButton" width="71" height="71"/>
+        <image name="tabbar-myLogIcon" width="25" height="25"/>
         <image name="tabbar-runIcon" width="27" height="28"/>
     </resources>
 </document>
