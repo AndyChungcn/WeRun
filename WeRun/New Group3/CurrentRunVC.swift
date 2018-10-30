@@ -74,7 +74,7 @@ class CurrentRunVC: RunLocation {
     
     func endRun() {
         manager?.stopUpdatingLocation()
-        
+        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter)
     }
     
     func calculatePace(time seconds: Int, miles: Double) -> String {

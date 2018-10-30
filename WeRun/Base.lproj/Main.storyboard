@@ -289,7 +289,7 @@
                                 <rect key="frame" x="0.0" y="87" width="375" height="531"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogCell" rowHeight="80" id="ZXW-cc-FTm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogCell" rowHeight="80" id="ZXW-cc-FTm" customClass="RunLogCell" customModule="WeRun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZXW-cc-FTm" id="gIT-Hx-gtM">
@@ -359,6 +359,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="avgPaceLabel" destination="gGB-MC-5Bw" id="akV-W3-GkO"/>
+                                            <outlet property="dateLabel" destination="j45-gd-arY" id="Qrz-HJ-rXQ"/>
+                                            <outlet property="distanceLabel" destination="PEp-xd-RFl" id="F3v-e0-QvX"/>
+                                            <outlet property="durationLabel" destination="SC1-Cv-jUu" id="Q6K-Iu-m97"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -383,6 +389,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabbar-myLogIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="WHp-Gu-nbk" id="PNB-jT-0bS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
