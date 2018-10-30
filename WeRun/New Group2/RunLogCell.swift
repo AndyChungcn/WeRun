@@ -21,7 +21,10 @@ class RunLogCell: UITableViewCell {
     }
     
     func configure(run: Run) {
-        
+        durationLabel.text = run.duration.formatTimeDurationToString()
+        distanceLabel.text = "\(run.distance.metersToMiles(places: 2)) mi"
+        avgPaceLabel.text = run.pace.formatTimeDurationToString()
+        dateLabel.text = run.date.getDateString()
     }
 
 }
