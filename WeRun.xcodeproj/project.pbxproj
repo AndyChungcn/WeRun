@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C06EB02219C0CEE00AB2E6C /* StopWatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06EB01219C0CEE00AB2E6C /* StopWatchVC.swift */; };
+		5C06EB04219C13BB00AB2E6C /* StopWatchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06EB03219C13BB00AB2E6C /* StopWatchTVC.swift */; };
+		5C06EB06219C18E700AB2E6C /* RoundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06EB05219C18E700AB2E6C /* RoundTimer.swift */; };
 		5C8C6C832187DA5700A6E904 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C6C822187DA5700A6E904 /* Constants.swift */; };
 		5C8C6C872188491D00A6E904 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C6C862188491D00A6E904 /* Location.swift */; };
 		5C8C6C8921884C2A00A6E904 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C6C8821884C2A00A6E904 /* RealmConfig.swift */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		5732844B24F9DA3EAB224089 /* Pods_WeRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C06EB01219C0CEE00AB2E6C /* StopWatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchVC.swift; sourceTree = "<group>"; };
+		5C06EB03219C13BB00AB2E6C /* StopWatchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchTVC.swift; sourceTree = "<group>"; };
+		5C06EB05219C18E700AB2E6C /* RoundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimer.swift; sourceTree = "<group>"; };
 		5C8C6C822187DA5700A6E904 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5C8C6C862188491D00A6E904 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5C8C6C8821884C2A00A6E904 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			children = (
 				5C97F0282186A97000109145 /* Run.swift */,
 				5C8C6C862188491D00A6E904 /* Location.swift */,
+				5C06EB05219C18E700AB2E6C /* RoundTimer.swift */,
 			);
 			name = Model;
 			path = "New Group1";
@@ -125,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5C97F02C2186B14A00109145 /* RunLogCell.swift */,
+				5C06EB03219C13BB00AB2E6C /* StopWatchTVC.swift */,
 			);
 			name = View;
 			path = "New Group2";
@@ -137,6 +145,7 @@
 				5C97F01E21868CF600109145 /* RunLogTVC.swift */,
 				5C97F02021868D0A00109145 /* CurrentRunVC.swift */,
 				5C97F02421868D2A00109145 /* RunLocation.swift */,
+				5C06EB01219C0CEE00AB2E6C /* StopWatchVC.swift */,
 			);
 			name = Controller;
 			path = "New Group3";
@@ -202,6 +211,11 @@
 				TargetAttributes = {
 					5C97EFF321867B5200109145 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -288,8 +302,11 @@
 				5C97F02D2186B14A00109145 /* RunLogCell.swift in Sources */,
 				5C97F01D21868CE300109145 /* BeginRunVC.swift in Sources */,
 				5C8C6C8921884C2A00A6E904 /* RealmConfig.swift in Sources */,
+				5C06EB02219C0CEE00AB2E6C /* StopWatchVC.swift in Sources */,
 				5C97EFF821867B5200109145 /* AppDelegate.swift in Sources */,
 				5C97F02121868D0A00109145 /* CurrentRunVC.swift in Sources */,
+				5C06EB06219C18E700AB2E6C /* RoundTimer.swift in Sources */,
+				5C06EB04219C13BB00AB2E6C /* StopWatchTVC.swift in Sources */,
 				5C97F0292186A97000109145 /* Run.swift in Sources */,
 				5C97F01F21868CF600109145 /* RunLogTVC.swift in Sources */,
 				5C8C6C832187DA5700A6E904 /* Constants.swift in Sources */,

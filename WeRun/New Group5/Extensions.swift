@@ -39,6 +39,6 @@ extension NSDate {
         let month = calender.component(.month, from: self as Date)
         let day = calender.component(.day, from: self as Date)
         let year = calender.component(.year, from: self as Date)
-        return "\(month)\(day)\(year)"
+        return "\(month)/\(day)/\(year)"
     }
 }

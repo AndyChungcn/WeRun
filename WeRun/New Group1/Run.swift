@@ -60,4 +60,30 @@ class Run: Object {
             return nil
         }
     }
+    
+    static func deleteRun(thisRun run: Run) {
+        REALM_QUEUE.sync {
+            do {
+                let realm = try Realm(configuration: RealmConfig.runDataConfig)
+                try realm.write {
+                    realm.delete(run)
+                }
+            } catch {
+                debugPrint("Error delete run")
+            }
+        }
+    }
+    
+    static func deleteAllRun() {
+        REALM_QUEUE.sync {
+            do {
+                let realm = try Realm(configuration: RealmConfig.runDataConfig)
+                try realm.write {
+                    realm.deleteAll()
+                }
+            } catch {
+                debugPrint("Error delete all run!")
+            }
+        }
+    }
 }

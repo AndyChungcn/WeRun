@@ -12,6 +12,7 @@ import RealmSwift
 
 class BeginRunVC: RunLocation {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var lastRunCloseBtn: UIButton!
     @IBOutlet weak var avgPaceLabel: UILabel!
@@ -21,6 +22,7 @@ class BeginRunVC: RunLocation {
     @IBOutlet weak var lastStackView: UIStackView!
     
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationAuthStatus()
@@ -36,9 +38,11 @@ class BeginRunVC: RunLocation {
         setupMapView()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {        
         manager?.stopUpdatingLocation()
     }
+    
+    
     
     func setupMapView() {
         if let overlay = addLastRunToMap() {
@@ -53,14 +57,13 @@ class BeginRunVC: RunLocation {
             lastStackView.isHidden = true
             lastRunBGView.isHidden = true
             lastRunCloseBtn.isHidden = true
-            
         }
     }
     
     func addLastRunToMap() -> MKPolyline? {
         guard let lastRun = Run.getAllRuns()?.first else { return nil }
         avgPaceLabel.text = lastRun.pace.formatTimeDurationToString()
-        distanceLabel.text = "\(lastRun.distance.metersToMiles(places: 2)) mi"
+        distanceLabel.text = "\(lastRun.distance.metersToMiles(places: 2)) 千米"
         durationLabel.text = lastRun.duration.formatTimeDurationToString()
         
         var coordinate = [CLLocationCoordinate2D]()
@@ -121,8 +124,8 @@ extension BeginRunVC: CLLocationManagerDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polyline = overlay as! MKPolyline
         let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.strokeColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
-        renderer.lineWidth = 4
+        renderer.strokeColor = #colorLiteral(red: 1, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        renderer.lineWidth = 5
         return renderer
     }
 }
