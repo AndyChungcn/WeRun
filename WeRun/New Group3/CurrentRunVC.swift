@@ -37,9 +37,9 @@ class CurrentRunVC: RunLocation {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startRun()
         manager?.delegate = self
         manager?.distanceFilter = 10
+        startRun()
     }
     
     func startRun() {
@@ -67,11 +67,11 @@ class CurrentRunVC: RunLocation {
     }
     
     func pauseRun() {
-        timer.invalidate()
-        pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: .normal)
         startLocation = nil
         lastLocation = nil
+        timer.invalidate()
         manager?.stopUpdatingLocation()
+        pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: .normal)
     }
     
     func endRun() {
@@ -107,21 +107,24 @@ class CurrentRunVC: RunLocation {
             }
         }
     }
+    
+    
 }
 
 extension CurrentRunVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            checkLocationAuthStatus()
+            checkLocationAuthStatus()            
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if startLocation == nil {
             startLocation = locations.first
-        } else if let location = locations.first {
+        } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
-            let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
+            let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))            
+            
             coordinateLocations.insert(newLocation, at: 0)
             distanceLabel.text = "\(runDistance.metersToMiles(places: 2))"
             if counter > 0 && runDistance > 0 {

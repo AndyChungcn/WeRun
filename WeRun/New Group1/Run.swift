@@ -55,6 +55,7 @@ class Run: Object {
             let realm = try Realm(configuration: RealmConfig.runDataConfig)
             var runs = realm.objects(Run.self)
             runs = runs.sorted(byKeyPath: "date", ascending: false)
+            print(runs)
             return runs
         } catch {
             return nil

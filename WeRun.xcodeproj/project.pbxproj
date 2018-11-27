@@ -102,7 +102,6 @@
 		5C97EFF621867B5200109145 /* WeRun */ = {
 			isa = PBXGroup;
 			children = (
-				5C97F01B21868C7400109145 /* Resources */,
 				5C97F01A21868C6E00109145 /* Extensions */,
 				5C97F01921868C6400109145 /* Utilities */,
 				5C97F01821868C5700109145 /* Controller */,
@@ -141,10 +140,10 @@
 		5C97F01821868C5700109145 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5C97F01C21868CE300109145 /* BeginRunVC.swift */,
-				5C97F01E21868CF600109145 /* RunLogTVC.swift */,
-				5C97F02021868D0A00109145 /* CurrentRunVC.swift */,
 				5C97F02421868D2A00109145 /* RunLocation.swift */,
+				5C97F01C21868CE300109145 /* BeginRunVC.swift */,
+				5C97F02021868D0A00109145 /* CurrentRunVC.swift */,
+				5C97F01E21868CF600109145 /* RunLogTVC.swift */,
 				5C06EB01219C0CEE00AB2E6C /* StopWatchVC.swift */,
 			);
 			name = Controller;
@@ -168,13 +167,6 @@
 			);
 			name = Extensions;
 			path = "New Group5";
-			sourceTree = "<group>";
-		};
-		5C97F01B21868C7400109145 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
